@@ -1,0 +1,137 @@
+'''
+1.Create a python function that takes 2 numbers x,y
+and prints 2 lists containing the odd and even numbers in the x,y range
+'''
+
+def print_even_odd(x,y):
+    evenList =[]
+    oddList = []
+
+    if(x >= y):
+        start = y
+        end = x
+    else:              
+        start = x
+        end = y
+    
+    for i in range(start,end+1):
+        if(i%2 == 0):
+            evenList.append(i)
+        else:
+            oddList.append(i)
+
+    print(evenList)
+    print(oddList)
+
+'''
+2.Create a python function that takes 2 numbers x,y
+and prints all the numbers between 1 and 100
+that can be divided on x,y
+'''
+
+def divisible_numbers(x,y):
+
+    divisbleNums = []
+    
+    if(x == 0 or y == 0):
+        print("You can't Divide By 0 ")
+    else :
+        for i in range(1,101):
+            if(i % x == 0 and i % y == 0):
+               divisbleNums.append(i)
+               
+        print(divisbleNums)       
+
+'''
+3.Create a python function that takes 2 numbers x, y
+and prints the multiplication table from x to y
+'''
+
+def multiplication_table(x,y):
+
+    for i in range(x,y+1):
+        for j in range(1,13):
+            print(f'{i} x {j} = {i*j}')
+
+        print('================')
+
+'''
+4.Create a function that takes a sentence and prints the sentence without duplicated words
+'''
+
+def sentence_without_duplicates(sentence):
+
+    words = sentence.split()
+    unique_words = set()
+
+    for word in words:
+        if word not in unique_words:
+            print(word, end = ' ')
+            unique_words.add(word)
+
+
+'''
+5.Create a function that takes a sentence
+and prints how many words in the sentence
+(do not count the spaces)
+'''
+
+def count_words(sentence):
+    word = set()
+    
+    sentence = sentence.strip()
+    word = sentence.split()
+
+    print("the sentence words are : " ,len(word))
+
+
+'''
+6.Create a function that takes
+a sentence and word and remove the word from the sentence
+'''
+
+def remove_word(sentence,word):
+    words = sentence.split()
+
+    filterd_words = []
+
+    for w in words:
+        if w != word:
+            filterd_words.append(w)
+
+    filterd_sentence = " ".join(filterd_words)
+    return filterd_sentence
+
+
+'''
+7.Create a function takes
+a sentence and a word and
+prints how many time the word used in the sentence
+'''
+def count_a_word(sentence,word):
+    count = 0
+    words = sentence.split()
+
+    for w in words:
+        if w == word in words:
+            count = count + 1
+    print(count)
+
+'''
+8.Create a function that takes x,y
+and prints all the number
+that can be divide by y from x to 100
+
+'''
+def divisible_numbers(x,y):
+
+    divisbleNums = []
+    
+    if(y == 0):
+        print("You can't Divide By 0 ")
+    else :
+        for i in range(x,101):
+            if(i % y == 0):
+               divisbleNums.append(i)
+               
+        print(divisbleNums)
